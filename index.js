@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express')
 const app = express()
 
@@ -13,7 +14,7 @@ app.post('/alert', function (req, res){
     res.json(req.body)
 })
  
-app.listen(3000, () => {
-    console.log(`App listening at http://localhost:3000`);
-  });
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
   
